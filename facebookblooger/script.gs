@@ -12,8 +12,9 @@ function publish()
   var url = 'https://graph.facebook.com'
     + '/pagename/feed'
  //   + '?access_token=' + encodeURIComponent(getToken());
-   + '?fields=full_picture,message,attachments&access_token=Enter user access token'
-   // + service.getAccessToken();
+    +'?fields='+ encodeURIComponent("name,full_picture,message,attachments{subattachments,url}")
+  +'&access_token=Enter user access token'
+  
   
    
     var response = UrlFetchApp.fetch(url, {'muteHttpExceptions': true});
@@ -25,11 +26,18 @@ function publish()
   
   var data =jsondata.data
   var pagename =data[0].name
-   var images= data[0].full_picture
+   var featuredimage= data[0].full_picture
   var messages =data[0].message
-  
+       var attachment = data[0].attachments 
+  var medias =attachment.data[0].subattachments
+ var i = 0; 
+  for (i = 0; i <10 ; i++){
+    var album =medias.data[i].media.image.src
+   // Logger.log(album);}
+ 
+  var imass= album
       
-   Logger.log(images);  //check this and adjust following for loop and html showFeed function accordingly
+   Logger.log(imass);  //check this and adjust following for loop and html showFeed function accordingly
   Logger.log(messages);
   Logger.log(attachment);
        
@@ -42,8 +50,8 @@ var kind ='#blogger#post';
     var blogId = BLOG_ID
   var title = pagename
   var content = messages
- var image = images
-   var imgbody = "<img  src=\""+image+"\">"+content+""
+ var fimagez = featuredimage
+   var imgbody = "<img  src=\""+fimagez+"\">"+content+"<img src=\""+imass+"\">"
 
 // var imgbody = "<img  src=\""+image+"\">"+content+""
  //<a href=\""+readurl+"\">"
