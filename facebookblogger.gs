@@ -1,5 +1,5 @@
 
-var BLOG_ID = '2402205635238914485';
+var BLOG_ID = '';
 
   
     
@@ -10,11 +10,11 @@ function publish()
 {
 
   var url = 'https://graph.facebook.com'
-    + '/love.to.traavel/feed'
+    + '/pagename/feed'
  //   + '?access_token=' + encodeURIComponent(getToken());
     +'?fields='+ encodeURIComponent("name,full_picture,message,attachments{subattachments,url}")
   
-  +'&access_token=EAAEFbh3UUJIBALSykVY7MF94fly4RU4lro9C7t2SX8wUZACoA8GRVeNCGpKHrmjCKMmoVAp9SbD9zr3oy5CSuVxObq2M7pibcJhifZBAAiIkzqtUx4kAICUdzG88GztWsasEsw1tBPJawF3wToZBARBpUdpyqzRgKCTL1G1aQZDZD'
+  +'&access_token=useraccesstoken'
    // + service.getAccessToken();
   
    
