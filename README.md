@@ -1,4 +1,4 @@
-facebook page feed to blogger   as post including attachments need facebook public feed access app with user token 
+Facebook page feed to blogger   as post including attachments need facebook public feed access app with user token 
 
 Developed by Arjun Ram Vs for Bitztrail 
 
